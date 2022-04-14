@@ -2,3 +2,5 @@
 
  [otherlink1](https://example.com)
  [otherlink2](https://example1.com)
+ [otherlink3](https:/examplebad.com)
+ 
