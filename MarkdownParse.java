@@ -9,30 +9,21 @@ public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
 
-        //(https://wrong.com)[otherlink5]
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
-        while(currentIndex < markdown.length()) {
-            
-        
+        while(currentIndex < markdown.length() && markdown.indexOf("[", currentIndex) != -1) {
             int openBracket = markdown.indexOf("[", currentIndex);
-            ///next line doesnt need to be used?
             int closeBracket = markdown.indexOf("]", openBracket);
-    
             int openParen = markdown.indexOf("(", closeBracket);
-
-            int period = markdown.indexOf(".", openParen);
-
-            int closeParen = markdown.indexOf(")", openParen);
-              
-            //one solved (when there is () in link)
-            
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
-
-            currentIndex = closeParen + 1;
-            
-           
+            if (openParen == closeBracket + 1) {
+                int closeParen = markdown.indexOf(")", openParen);
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+                currentIndex = closeParen + 1;
+            }
+            else {
+                currentIndex = closeBracket + 1;
+            }
         }
 
         return toReturn;
