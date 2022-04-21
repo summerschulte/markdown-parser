@@ -43,9 +43,35 @@ public class MarkdownParseTest {
         expected2.add("https://example.com");
         expected2.add("https://exam(");
         expected2.add("https://wrong(");
-        System.out.println(output2);
+        
         
         assertEquals(expected2,output2);
+
+///test 4 
+        Path fileName3 = Path.of("test-file2.md");
+        String content3 = Files.readString(fileName3);
+        ArrayList<String> output3 = MarkdownParse.getLinks(content3);
+        ArrayList<String> expected3= new ArrayList<String>();
+        expected3.add("https://something.com");
+        expected3.add("some-thing.html");
+        
+        
+        
+        assertEquals(expected3,output3);
+        ///test5
+        Path fileName4 = Path.of("test-file3.md");
+        String content4 = Files.readString(fileName3);
+        ArrayList<String> output4 = MarkdownParse.getLinks(content4);
+        ArrayList<String> expected4= new ArrayList<String>();
+        expected4.add("https://something.com");
+        expected4.add("some-thing.html");
+        
+        
+        
+        assertEquals(expected4,output4);
+
+
+        
 
     }
     
