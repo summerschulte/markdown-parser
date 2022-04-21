@@ -24,7 +24,7 @@ public class MarkdownParse {
 
             int period = markdown.indexOf(".", openParen);
 
-            int closeParen = markdown.indexOf(")", period);
+            int closeParen = markdown.indexOf(")", openParen);
               
             //one solved (when there is () in link)
             
