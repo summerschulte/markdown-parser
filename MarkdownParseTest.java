@@ -79,10 +79,6 @@ public class MarkdownParseTest {
         Path testFile = Path.of("test-files/test-file8.md");
         String testFileContent = Files.readString(testFile);
         assertEquals(MarkdownParse.getLinks(testFileContent), testFileLinks);
-
-        //helloooo no 
-        //ehehheh
-
     }
     
 } 
