@@ -87,6 +87,7 @@ public class MarkdownParseTest {
         String testFileContent = Files.readString(testFile);
         assertEquals(testFileLinks, MarkdownParse.getLinks(testFileContent));
         System.out.println("were in tests");
+        
     }
     
 } 
